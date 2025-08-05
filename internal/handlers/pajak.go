@@ -10,7 +10,6 @@ import (
 	"test-case/internal/utils"
 )
 
-// PajakHandler handles tax calculation requests (both GET and POST)
 func PajakHandler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:

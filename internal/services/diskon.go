@@ -8,7 +8,6 @@ import (
 	"test-case/internal/utils"
 )
 
-// ValidateDiskonInput validates the discount calculation input
 func ValidateDiskonInput(request models.DiskonRequest) error {
 	if request.TotalSebelumDiskon <= 0 {
 		return fmt.Errorf("total_sebelum_diskon harus lebih besar dari 0")
@@ -40,7 +39,6 @@ func ValidateDiskonInput(request models.DiskonRequest) error {
 	return nil
 }
 
-// HitungDiskonBertingkat calculates tiered discount without details
 func HitungDiskonBertingkat(totalSebelumDiskon float64, discounts []models.DiskonItem) models.DiskonResponse {
 	hargaSekarang := totalSebelumDiskon
 
@@ -58,7 +56,6 @@ func HitungDiskonBertingkat(totalSebelumDiskon float64, discounts []models.Disko
 	}
 }
 
-// HitungDiskonBertingkatDetail calculates tiered discount with step-by-step details
 func HitungDiskonBertingkatDetail(totalSebelumDiskon float64, discounts []models.DiskonItem) models.DiskonDetailResponse {
 	hargaSekarang := totalSebelumDiskon
 	var detailPerhitungan []models.DetailPerhitungan

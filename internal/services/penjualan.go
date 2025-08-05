@@ -10,7 +10,6 @@ import (
 	"test-case/internal/utils"
 )
 
-// ValidatePenjualanData validates the sales transaction data
 func ValidatePenjualanData(data models.PenjualanRequest) error {
 	if data.NamaPelanggan == "" {
 		return fmt.Errorf("nama_pelanggan tidak boleh kosong")
@@ -65,7 +64,6 @@ func ValidatePenjualanData(data models.PenjualanRequest) error {
 	return nil
 }
 
-// SavePenjualan saves the sales transaction to database
 func SavePenjualan(data models.PenjualanRequest) (int64, error) {
 	db := config.GetDB()
 	tx, err := db.Begin()

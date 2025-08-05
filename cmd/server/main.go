@@ -10,14 +10,11 @@ import (
 )
 
 func main() {
-	// Initialize database
 	config.InitDB()
 	defer config.CloseDB()
 
-	// Setup routes
 	setupRoutes()
 
-	// Start server
 	fmt.Println("🚀 Server running on http://localhost:8080")
 	fmt.Println("📚 Available endpoints:")
 	fmt.Println("   - POST /penjualan")
@@ -28,13 +25,11 @@ func main() {
 }
 
 func setupRoutes() {
-	// Main routes
 	http.HandleFunc("/", handlers.RootHandler)
 	http.HandleFunc("/penjualan", handlers.PenjualanHandler)
 	http.HandleFunc("/hitung-pajak", handlers.PajakHandler)
 	http.HandleFunc("/hitung-diskon", handlers.DiskonHandler)
 
-	// Alternative endpoints
 	http.HandleFunc("/pajak/hitung", handlers.PajakHandler)
 	http.HandleFunc("/diskon/hitung", handlers.DiskonHandler)
 }

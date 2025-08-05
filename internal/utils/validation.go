@@ -5,7 +5,6 @@ import (
 	"net/http"
 )
 
-// ValidateMethod checks if the request method is allowed
 func ValidateMethod(w http.ResponseWriter, r *http.Request, allowedMethods ...string) bool {
 	for _, method := range allowedMethods {
 		if r.Method == method {
@@ -16,7 +15,6 @@ func ValidateMethod(w http.ResponseWriter, r *http.Request, allowedMethods ...st
 	return false
 }
 
-// ConvertToString converts interface{} to string
 func ConvertToString(v interface{}) string {
 	switch val := v.(type) {
 	case string:

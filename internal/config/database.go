@@ -9,7 +9,6 @@ import (
 
 var DB *sql.DB
 
-// InitDB initializes the database connection
 func InitDB() {
 	var err error
 	dsn := "root:@tcp(127.0.0.1:3306)/test_case?parseTime=true"
@@ -24,14 +23,12 @@ func InitDB() {
 	log.Println("Database connected successfully")
 }
 
-// CloseDB closes the database connection
 func CloseDB() {
 	if DB != nil {
 		DB.Close()
 	}
 }
 
-// GetDB returns the database instance
 func GetDB() *sql.DB {
 	return DB
 }

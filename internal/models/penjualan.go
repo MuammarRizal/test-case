@@ -1,6 +1,5 @@
 package models
 
-// PenjualanRequest represents the request data for sales transaction
 type PenjualanRequest struct {
 	NamaPelanggan string          `json:"nama_pelanggan"`
 	Tanggal       string          `json:"tanggal"`
@@ -11,7 +10,6 @@ type PenjualanRequest struct {
 	Items         []PenjualanItem `json:"items"`
 }
 
-// PenjualanItem represents an item in the sales transaction
 type PenjualanItem struct {
 	ItemID   interface{} `json:"item_id"`
 	Quantity float64     `json:"quantity"`

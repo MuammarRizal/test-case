@@ -9,7 +9,6 @@ import (
 	"test-case/internal/utils"
 )
 
-// DiskonHandler handles discount calculation requests
 func DiskonHandler(w http.ResponseWriter, r *http.Request) {
 	if !utils.ValidateMethod(w, r, http.MethodPost) {
 		return
